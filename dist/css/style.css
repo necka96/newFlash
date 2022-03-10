@@ -146,7 +146,6 @@ i {
   max-height: 100vh;
   -webkit-animation: main-animate 0.5s ease;
           animation: main-animate 0.5s ease;
-  z-index: 3;
   cursor: pointer;
 }
 @-webkit-keyframes main-animate {
@@ -175,6 +174,7 @@ i {
   -webkit-animation: shadow-one 0.6s ease-out;
           animation: shadow-one 0.6s ease-out;
   transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+  z-index: 1 !important;
 }
 @-webkit-keyframes shadow-one {
   0% {
@@ -202,6 +202,7 @@ i {
   -webkit-animation: shadow-two 0.6s ease-in-out;
           animation: shadow-two 0.6s ease-in-out;
   transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+  z-index: 2 !important;
 }
 @-webkit-keyframes shadow-two {
   0% {
@@ -251,11 +252,10 @@ i {
 }
 @media only screen and (max-width: 600px) {
   .container.active .main {
-    transform: perspective(1300px) rotateY(20deg) translateZ(240px) scale(0.4);
+    transform: perspective(1300px) rotateY(20deg) translateZ(140px) scale(0.4);
     max-height: 100vh;
     -webkit-animation: main-animate 0.5s ease;
             animation: main-animate 0.5s ease;
-    z-index: 5;
     cursor: pointer;
   }
   @-webkit-keyframes main-animate {
@@ -263,7 +263,7 @@ i {
       transform: translate(0);
     }
     to {
-      transform: perspective(1200px) rotateY(20deg) translateZ(240px) scale(0.4);
+      transform: perspective(1200px) rotateY(20deg) translateZ(140px) scale(0.4);
     }
   }
   @keyframes main-animate {
@@ -271,7 +271,7 @@ i {
       transform: translate(0);
     }
     to {
-      transform: perspective(1200px) rotateY(20deg) translateZ(240px) scale(0.4);
+      transform: perspective(1200px) rotateY(20deg) translateZ(140px) scale(0.4);
     }
   }
   .container.active .main:hover {
@@ -284,7 +284,8 @@ i {
     -webkit-animation: shadow-one 0.6s ease-out;
             animation: shadow-one 0.6s ease-out;
     transform: perspective(1300px) rotateY(20deg) translateZ(200px) scale(0.4);
-    z-index: -1 !important;
+    z-index: -1;
+    display: none;
   }
   @-webkit-keyframes shadow-one {
     0% {
@@ -312,7 +313,8 @@ i {
     -webkit-animation: shadow-two 0.6s ease-in-out;
             animation: shadow-two 0.6s ease-in-out;
     transform: perspective(1300px) rotateY(20deg) translateZ(170px) scale(0.4);
-    z-index: -2 !important;
+    z-index: -2;
+    display: none;
   }
   @-webkit-keyframes shadow-two {
     0% {
@@ -452,11 +454,11 @@ i {
   transition: 0.5s;
 }
 .container .main-container .shadow.one {
-  z-index: 1;
+  z-index: -1;
   opacity: 0.15;
 }
 .container .main-container .shadow.two {
-  z-index: 2;
+  z-index: -2;
   opacity: 0.1;
 }
 .container .links {
