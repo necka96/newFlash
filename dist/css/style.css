@@ -146,6 +146,7 @@ i {
   max-height: 100vh;
   -webkit-animation: main-animate 0.5s ease;
           animation: main-animate 0.5s ease;
+  z-index: 3;
   cursor: pointer;
 }
 @-webkit-keyframes main-animate {
@@ -448,11 +449,11 @@ i {
   transition: 0.5s;
 }
 .container .main-container .shadow.one {
-  z-index: -1;
+  z-index: 1;
   opacity: 0.15;
 }
 .container .main-container .shadow.two {
-  z-index: -2;
+  z-index: 2;
   opacity: 0.1;
 }
 .container .links {
