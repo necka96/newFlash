@@ -238,6 +238,7 @@ i {
         animation: shadow-one 0.6s ease-out;
         transform: perspective(1300px) rotateY(20deg) translateZ(200px)
           scale(0.4);
+        z-index: -1 !important;
 
         @keyframes shadow-one {
           0% {
@@ -259,6 +260,7 @@ i {
         animation: shadow-two 0.6s ease-in-out;
         transform: perspective(1300px) rotateY(20deg) translateZ(170px)
           scale(0.4);
+        z-index: -2 !important;
 
         @keyframes shadow-two {
           0% {
