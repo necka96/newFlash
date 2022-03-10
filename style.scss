@@ -115,10 +115,10 @@ i {
   width: 100%;
   background-color: #485461;
   background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
-  overflow: hidden;
+  overflow: visible;
   &.active {
     height: 100vh;
-
+    overflow: hidden;
     .bar {
       transform: rotate(360deg);
       background: transparent !important;
@@ -132,7 +132,7 @@ i {
     .main {
       transform: perspective(1300px) rotateY(20deg) translate3d(0, 0, 310px)
         scale(0.5);
-      max-height: 100vh;
+      min-height: 100vh;
       animation: main-animate 0.5s ease;
       cursor: pointer;
       @keyframes main-animate {

@@ -126,10 +126,11 @@ i {
   width: 100%;
   background-color: #485461;
   background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
-  overflow: hidden;
+  overflow: visible;
 }
 .container.active {
   height: 100vh;
+  overflow: hidden;
 }
 .container.active .bar {
   transform: rotate(360deg);
@@ -143,7 +144,7 @@ i {
 }
 .container.active .main {
   transform: perspective(1300px) rotateY(20deg) translate3d(0, 0, 310px) scale(0.5);
-  max-height: 100vh;
+  min-height: 100vh;
   -webkit-animation: main-animate 0.5s ease;
           animation: main-animate 0.5s ease;
   cursor: pointer;
@@ -256,6 +257,7 @@ i {
     max-height: 100vh;
     -webkit-animation: main-animate 0.5s ease;
             animation: main-animate 0.5s ease;
+    z-index: 5;
     cursor: pointer;
   }
   @-webkit-keyframes main-animate {
@@ -263,7 +265,7 @@ i {
       transform: translate(0);
     }
     to {
-      transform: perspective(1200px) rotateY(20deg) translateZ(160px) scale(0.4);
+      transform: perspective(1200px) rotateY(20deg) translate3d(0, 0, 160px) scale(0.4);
     }
   }
   @keyframes main-animate {
@@ -271,19 +273,20 @@ i {
       transform: translate(0);
     }
     to {
-      transform: perspective(1200px) rotateY(20deg) translateZ(160px) scale(0.4);
+      transform: perspective(1200px) rotateY(20deg) translate3d(0, 0, 160px) scale(0.4);
     }
   }
   .container.active .main:hover {
-    transform: perspective(1300px) rotateY(20deg) translateZ(170px) scale(0.4);
+    transform: perspective(1300px) rotateY(20deg) translate3d(0, 0, 170px) scale(0.4);
   }
   .container.active .main:hover + .shadow.one {
-    transform: perspective(1300px) rotateY(20deg) translateZ(150px) scale(0.4);
+    transform: perspective(1300px) rotateY(20deg) translate3d(0, 0, 150px) scale(0.4);
   }
   .container.active .shadow.one {
     -webkit-animation: shadow-one 0.6s ease-out;
             animation: shadow-one 0.6s ease-out;
     transform: perspective(1300px) rotateY(20deg) translate3d(0, 0, 140px) scale(0.4);
+    z-index: -1;
   }
   @-webkit-keyframes shadow-one {
     0% {
@@ -311,6 +314,7 @@ i {
     -webkit-animation: shadow-two 0.6s ease-in-out;
             animation: shadow-two 0.6s ease-in-out;
     transform: perspective(1300px) rotateY(20deg) translate3d(0, 0, 130px) scale(0.4);
+    z-index: -2;
   }
   @-webkit-keyframes shadow-two {
     0% {
