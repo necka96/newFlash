@@ -117,8 +117,10 @@ i {
   background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
   overflow: visible;
   &.active {
+    .section {
+      display: none;
+    }
     height: 100vh;
-    overflow: hidden;
     .bar {
       transform: rotate(360deg);
       background: transparent !important;

@@ -130,7 +130,9 @@ i {
 }
 .container.active {
   height: 100vh;
-  overflow: hidden;
+}
+.container.active .section {
+  display: none;
 }
 .container.active .bar {
   transform: rotate(360deg);
