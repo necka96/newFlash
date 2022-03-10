@@ -255,6 +255,7 @@ i {
     max-height: 100vh;
     -webkit-animation: main-animate 0.5s ease;
             animation: main-animate 0.5s ease;
+    z-index: 5;
     cursor: pointer;
   }
   @-webkit-keyframes main-animate {
